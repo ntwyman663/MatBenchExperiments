@@ -1,8 +1,26 @@
 # MatBench Experiments
 
-Experiments predicting experimental material bandgaps from composition using the `matbench_expt_gap` dataset, Magpie features, random forests, and XGBoost with Bayesian hyperparameter optimisation.
+This repository explores building machine learning predictors for different materials properties using [Matbench datasets](https://matbench.materialsproject.org/). The aim is to investigate how choices of material representation, model, and hyperparameters affect predictive performance, and to compare the results with leading methodologies reported on the [Matbench leaderboard](https://matbench.materialsproject.org/).
 
-Open [matbench-bandgap-predictor.ipynb](matbench-bandgap-predictor.ipynb) to view the work and saved results. This is a work in progress: the initial notebook preserves my Lecture9 work unchanged. One code cell contains the prose “Predicting experimental bandgap” and must be changed to Markdown before running all cells.
+## Starting point: experimental bandgap prediction
+
+The project began with the `matbench_expt_gap` dataset, predicting experimental bandgaps from chemical composition. The initial experiments use Magpie composition features, random forests, and XGBoost, including Bayesian hyperparameter optimisation.
+
+[matbench-bandgap-predictor.ipynb](matbench-bandgap-predictor.ipynb) records this initial work and its results. Future experiments will explore additional materials properties and prediction approaches.
+
+The current notebook uses its own train/test split. Comparisons with published methods provide context; direct benchmark comparisons require matching the official Matbench evaluation protocol.
+
+## Inspiration and acknowledgements
+
+This work was inspired by completing Prof Aron Walsh’s **Machine Learning for Materials** lecture course at Imperial College London. It began with my work in Lecture9 of the [course repository](https://github.com/aronwalsh/MLforMaterials), then developed into this independent project.
+
+The course was developed by Aron Walsh with assistance from Anthony Onwuli and Zhenzhu Li. The original teaching material is credited to its authors.
+
+## Matbench reference
+
+Matbench provides datasets and an evaluation framework for materials property prediction. Dataset information and published results are available on the [Matbench website](https://matbench.materialsproject.org/), with code in the [Matbench repository](https://github.com/materialsproject/matbench).
+
+Dunn, A., Wang, Q., Ganose, A., Dopp, D. & Jain, A. **Benchmarking materials property prediction methods: the Matbench test set and Automatminer reference algorithm.** *npj Computational Materials* **6**, 138 (2020). [doi:10.1038/s41524-020-00406-3](https://doi.org/10.1038/s41524-020-00406-3).
 
 ## Run locally
 
@@ -16,14 +34,6 @@ uv run jupyter lab
 Select the Python environment belonging to this project. The notebook downloads its dataset through matminer and requires internet access for the first download. Hyperparameter optimisation can take substantial time.
 
 The Python 3.12 environment definitions and full course dependency set are retained in `pyproject.toml`, `uv.lock`, and `.python-version`. The small `src/mlformaterials` scaffold supports the existing package configuration. Installed virtual environments are recreated locally and are not committed.
-
-## Acknowledgements and provenance
-
-Adapted from Lecture9 of [Machine Learning for Materials](https://github.com/aronwalsh/MLforMaterials), a public course by Prof Aron Walsh at Imperial College London, developed with Anthony Onwuli and Zhenzhu Li. The initial copy comes from my locally modified course checkout, whose upstream HEAD was `3b4f745`.
-
-My model development and experiments build on the course notebook; the original teaching material is credited to its authors. This repository is an independent learning project.
-
-The dataset is `matbench_expt_gap`, distributed through [matminer](https://hackingmaterials.lbl.gov/matminer/) and described by [Matbench](https://matbench.materialsproject.org/). The notebook uses its own train/test split; results should not be treated as official Matbench benchmark scores.
 
 ## License notice
 
