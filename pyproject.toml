@@ -1,0 +1,41 @@
+[project]
+name = "mlformaterials"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ntwyman663", email = "n.twyman663@gmail.com" }
+]
+requires-python = ">=3.12, <3.13"
+dependencies = [
+    "elementembeddings>=0.8.0",
+    "jupyter>=1.1.1",
+    "jupyter-book>=2.1.6",
+    "jupyterlab-myst>=2.7.0",
+    "matminer==0.9.3",
+    "matplotlib>=3.11.1",
+    "myst-nb>=1.4.0",
+    "numpy>=2.5.3",
+    "optimade[http-client]>=1.5.0",
+    "pandas>=2.2,<3",
+    "plotly<7",
+    "pymatgen==2025.10.7",
+    "pymatviz==0.18.0",
+    "scikit-image>=0.26.0",
+    "scikit-learn<1.6",
+    "scikit-optimize>=0.10.2",
+    "scipy<1.17",
+    "seaborn>=0.13.2",
+    "setuptools<82",
+    "smact==3.2.0",
+    "torch>=2.14.0",
+    "torchvision>=0.29.1",
+    "xgboost==3.1.2",
+]
+
+[project.scripts]
+mlformaterials = "mlformaterials:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
